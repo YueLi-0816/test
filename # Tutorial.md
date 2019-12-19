@@ -12,9 +12,7 @@
 
 **## Install MongoDB**
 
-***\*MongoDB\**** is a NoSQL database used for storage of single-cell datasets. `Official guide` of MongoDB installation can be found at: https://docs.mongodb.com/manual/administration/install-on-linux/. Select
-
-the appropriate version for your system.
+***\*MongoDB\**** is a NoSQL database used for storage of single-cell datasets. `Official guide` of MongoDB installation can be found at: https://docs.mongodb.com/manual/administration/install-on-linux/. Select the appropriate version for your system.
 
 Installation using the `binary version` is recommended to avoid using `sudo`.
 
