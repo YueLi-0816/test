@@ -4,7 +4,7 @@
 
 # Introduction
 
-Our entire workflow are divided into three parts,deployment,restoring dumped database into the MongoDB and loading the own data into MongoDB. 
+Our entire workflow can be divided into three parts,deployment,restoring dumped database into the MongoDB and loading the own data into MongoDB. 
 
 Deployment process including MongoDB, backend and frontend shows a detailed flow to help you deploy on your server.  In deployment part, you also need to pay attention to the configuration of `Python environment` and `supervisor`.
 
