@@ -14,7 +14,7 @@ When loading your own data into the MongoDB, you need to pay attention to the fo
 
 Here is a simple schematic diagram.
 
-![image-20191219155858582](C:\Users\李玥\OneDrive\AB\working_content\Pfizer\image-20191219155858582.png)
+![image-20191219155858582](https://github.com/ayue19960816/test/blob/master/work_flow.png)
 
 
 
