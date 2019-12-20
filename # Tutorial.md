@@ -15,7 +15,7 @@ When loading your own data into the MongoDB, you need to pay attention to the fo
 Here is a simple schematic diagram.
 
 ![Figure1. Schematic diagram](https://github.com/ayue19960816/test/blob/master/work_flow.png =100x20)
-<div style="text-align:center"><img src="https://github.com/ayue19960816/test/blob/master/work_flow.png =100x20" /></div>
+<div style="text-align:center"><img src="https://github.com/ayue19960816/test/blob/master/work_flow.png" /></div>
 
 
 # Part 1 Deployment 
