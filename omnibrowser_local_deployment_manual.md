@@ -88,10 +88,43 @@ requirements can be satisfied.
 
 
 
-# 1.3 Local deployment guide
+# 3 Local deployment guide
 
-Operation system requirements
+**lack general intro here**
 
-The web portal can be deployed on any Linux server as long as the software
+## 3.0 setting up Python environment
 
-Database API walkthrough
+The delivered package will look like:
+
+```bash
+.
+├── client_side
+│   ├── index.html
+│   └── static
+└── server_side
+    ├── Abio
+    ├── algorithm.py
+    ├── cell_by_gene.py
+    ├── database_API.py
+    ├── gene_reference
+    ├── human_gene.txt
+    ├── manage.py
+    ├── market
+    ├── mus_gene.txt
+    ├── requirements.txt
+    ├── restore.py
+    ├── summary.py
+    └── supervisord.conf
+```
+
+<br>
+
+Follow the instructions to set up the environment:
+
+1.  use conda or virtualenv (<https://virtualenv.pypa.io/en/stable/userguide/>) to set up a saperated python environment
+
+2.  install required packages listed in server_side/requirements.txt
+
+3.  activate and perform all following operations within the environment
+
+## 3.1 client-side deployment
