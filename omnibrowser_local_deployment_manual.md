@@ -121,10 +121,48 @@ The delivered package will look like:
 
 Follow the instructions to set up the environment:
 
-1.  use conda or virtualenv (<https://virtualenv.pypa.io/en/stable/userguide/>) to set up a saperated python environment
+1.  set up a saperated python environment using conda or virtualenv (<https://virtualenv.pypa.io/en/stable/userguide/>)
 
 2.  install required packages listed in server_side/requirements.txt
 
 3.  activate and perform all following operations within the environment
 
+
 ## 3.1 client-side deployment
+
+make sure before continue:
+
+- Apache or Nginx has been installed for internet access configuration.
+
+The client-side package will look like:
+
+```bash
+client_side
+├── index.html
+└── static
+    ├── configure.js
+    ├── css
+    ├── fonts
+    ├── img
+    ├── js
+    ├── scss
+    └── vendor
+```
+
+Follow the instructions to deploy the client-side:
+
+### step 1 - cp the entire client_side package to a internet-accessible directory
+
+e.g. (when the server is configured using Apache)
+
+```bash
+cp -r client_side /var/www/html/omnibrowser/
+```
+
+open an Internet browser and go to this directory (e.g. 123.456.789.111/omnibrowser/) to validate internet access.
+Display of OmniBrowser welcome page indicates success.
+
+### step 2 - configure JSON-API
+
+
+
