@@ -159,10 +159,22 @@ e.g. (when the server is configured using Apache)
 cp -r client_side /var/www/html/omnibrowser/
 ```
 
-open an Internet browser and go to this directory (e.g. 123.456.789.111/omnibrowser/) to validate internet access.
+open an Internet browser and go to this directory (e.g. 123.456.789.111/omnibrowser/client_side) to validate internet access.
 Display of OmniBrowser welcome page indicates success.
 
 ### step 2 - configure JSON-API
+
+open /client_side/static/configure.js, which reads like:
+
+```javascript
+window.Global1 = {
+  serverSrc: 'http://47.92.36.58:9099',
+};
+```
+
+replace the <server_ip> & <port> to your specifications.
+    
+
 
 
 
