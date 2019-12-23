@@ -121,7 +121,7 @@ The delivered package will look like:
 
 Follow the instructions to set up the environment:
 
-1.  set up a saperated python environment using conda or virtualenv (<https://virtualenv.pypa.io/en/stable/userguide/>)
+1.  set up a isolated python environment using conda or virtualenv (<https://virtualenv.pypa.io/en/stable/userguide/>)
 
 2.  install required packages listed in server_side/requirements.txt
 
@@ -164,17 +164,24 @@ Display of OmniBrowser welcome page indicates success.
 
 ### step 2 - configure JSON-API
 
+**lack prior**
+
 open /client_side/static/configure.js, which reads like:
 
 ```javascript
 window.Global1 = {
-  serverSrc: 'http://47.92.36.58:9099',
+  serverSrc: 'http://<server_ip>:<port>',
 };
 ```
 
-replace the <server_ip> & <port> to your specifications.
+replace <server_ip> & <port> to your specifications.
     
 
 
+## 3.2 server-side deployment
 
+make sure before continue:
+
+- Apache or Nginx has been installed for internet access configuration, we'll use it to configure the <port> of JSON-API.
+- We're within the isolated Python environment.
 
