@@ -17,6 +17,8 @@ following order:
 
 4.  Database API walk-through
 
+5.  Contact
+
 
 
 
@@ -315,10 +317,12 @@ If your Linux system is disconnected , you need restart supervisor service when 
 
 ### step 4 - restore data into MongoDB
 
-**Wenjie would you mind completing this? since I'm not familiar with your final-delivery format.**
+*Wenjie would you mind completing this? since I'm not familiar with your final-delivery format.*
+*1. please add a directory sample like above, use tree command from Linux*
+*2. can you clarify a bit more on path configuration? like above maybe*
+*3. can you explain a little bit more on summary.py? at least we should mention when to use it*
 
-
-<wenjie Please edit within this range>
+*<wenjie Please edit within this range>*
 
 
 After restoring data into MongoDB, we would be able to access the datasets from the browser via <http://server_ip/omnibrowser/client_side>, as illustrated in **3.1 deployment of client-side step-1** 
@@ -327,4 +331,23 @@ After restoring data into MongoDB, we would be able to access the datasets from 
 ### Local deployment guide ends here
 <br><br><br>
 
+
+
+
+
+# 4 database API walk-through
+
+*Wenjie would you mind completing this? since I'm not familiar with your final-delivery format.*
+*1. please get some mongo shell view of the 10 collections to clarify it*
+*2. the direct import may cause confusion, what about we just see this is an API introduction and you may just copy paste the definitions?*
+*3. I think we can make things simpler, we just introduce (1) the database architecture (the collections), (2)what is pymongo and how do we use it as an API (3)the central class in the API (4) a very brief introduction on class-method parameters. 
+maybe sth like https://geoparse.readthedocs.io/en/latest/GEOparse.html and we just have themselves read the codes*
+
+
+
+
+
+# 5 Contact
+
+Any potential issues, please do not hesitate to contact our technical support at <omnibrowser@abiosciences.com>
 
