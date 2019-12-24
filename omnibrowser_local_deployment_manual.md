@@ -92,7 +92,7 @@ requirements can be satisfied.
 
 # 3 Local deployment guide
 
-## 3.0 setting up Python environment
+## 3.0 Setting up Python environment
 
 The delivered package will look like:
 
@@ -128,7 +128,7 @@ Follow the instructions to set up the environment:
 3.  activate and perform all following operations within the environment
 
 
-## 3.1 client-side deployment
+## 3.1 Client-side deployment
 
 make sure before continue:
 
@@ -151,7 +151,7 @@ client_side
 
 Follow the instructions to deploy the client-side:
 
-### step 1 - cp the entire client_side package to a internet-accessible directory
+### Step 1 - Copy the entire client_side package to a internet-accessible directory
 
 e.g. (when the server is configured using Apache)
 
@@ -162,7 +162,7 @@ cp -r client_side /var/www/html/omnibrowser/
 open an Internet browser and go to this directory (e.g. 123.456.789.111/omnibrowser/client_side) to validate internet access.
 Display of OmniBrowser welcome page indicates success.
 
-### step 2 - configure JSON-API
+### step 2 - Configure JSON-API
 
 We will skip and go back to this part after completing **3.2 server-side deployment step 1**
 
@@ -180,7 +180,7 @@ replace <server_ip> & <port> to your specifications.
 
 
 
-## 3.2 server-side deployment
+## 3.2 Server-side deployment
 
 make sure before continue:
 
@@ -188,7 +188,7 @@ make sure before continue:
 - We're within the isolated Python environment.
     
     
-### step 1 - run server
+### Step 1 - Run server
 
 the server-side code will look like
 
@@ -239,7 +239,7 @@ on successful deployment, the browser will display a json string:
 {"running": "true"}
 ```
 
-### step 2 - configure the client-side code
+### step 2 - Configure the client-side code
 
 Now that we have had the server running, we should go back to **3.1 client-side deployment - step -2** 
 to configure the JSON API for the client side.
@@ -248,17 +248,17 @@ to configure the JSON API for the client side.
 
 
 
-## 3.3 database deployment
+## 3.3 Database deployment
 
-### step 1 - install MongoDB
+### step 1 - Install MongoDB
 
 `Official guide` of MongoDB installation is available at: <https://docs.mongodb.com/manual/administration/install-on-linux/>. Please select the appropriate version for your system.
 
 Installation using the `binary tar ball` is recommended to avoid using `sudo` and we suggest a thorough go-through of the following manual <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu-tarball/>
 
-### step 2 - configure supervisord
+### step 2 - Configure supervisord
 
-the built-in Cache functions of MongoDB may usually trigger `Linux OOM-killer` which in turn kills the database process.
+The built-in Cache functions of MongoDB may usually trigger `Linux OOM-killer` which in turn kills the database process.
 To always have database running, we suggest using `supervisord` to run MongoDB as a run-process.
 `Supervisor` is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems. Learn more at: http://supervisord.org/.
 
@@ -270,11 +270,11 @@ to stop mongod process, You may use either simply `htop` or follow the instructi
 
 To configure supervisord:
 
-1.  open /server_side/supervisord.conf
+1. Open /server_side/supervisord.conf
     
-2. locate to `[program:mongodb]`
+2. Locate to `[program:mongodb]`
 
-3. edit `command`
+3. Edit `command`
    replace the 3 quoted paths with your specifications
    
    ```bash
@@ -286,7 +286,7 @@ To configure supervisord:
    command=/home/web/data/database/mongodb/mongodb-linux-x86_64-ubuntu1804-4.2.1/bin/mongod --dbpath 
    /home/web/data/database/mongodb/db --logpath /home/web/data/database/mongodb/log/mongod.log
    ```
-4. edit `user` 
+4. Edit `user` 
    
    replace <user> with you Linux user account
    
@@ -294,9 +294,9 @@ To configure supervisord:
    user=<user>
    ```
    
-5. save changes
+5. Save changes
 
-### step 3 - run MongoDB from supervisord
+### step 3 - Run MongoDB from supervisord
 
 Run this command (within Python environment) to start supervisor service.
 
@@ -313,7 +313,7 @@ supervisorctl status
 If your Linux system is disconnected , you need restart supervisor service when it is connected again.
 
 
-### step 4 - restore data into MongoDB
+### step 4 - Restore data into MongoDB
 
 *Wenjie would you mind completing this? since I'm not familiar with your final-delivery format.* <br>
 *1. please add a directory sample like above, use tree command from Linux* <br>
@@ -333,7 +333,7 @@ After restoring data into MongoDB, we would be able to access the datasets from 
 
 
 
-# 4 database API walk-through
+# 4 Database API walk-through
 
 *Wenjie would you mind completing this? since I'm not familiar with your final-delivery format.* <br>
 *1. please get some mongo shell view of the 10 collections to clarify it* <br>
