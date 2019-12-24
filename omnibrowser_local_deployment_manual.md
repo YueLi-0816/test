@@ -188,7 +188,7 @@ make sure before continue:
     
 ### step 1 - run server
 
-the server-side code will look at
+the server-side code will look like
 
 ```bash
 server_side/
@@ -207,6 +207,7 @@ server_side/
 └── supervisord.conf
 ```
 
+The server_side code can be copied to and run within any directory.
 To run server, within the Python environment:
 
 ```bash
@@ -219,7 +220,16 @@ nohup python3 manage.py runserver 0:<port>
 
 Since we used the nohup command, the server will be running in the background no matter whether we close the ssh connection, unless there's operation system reboot.
 To shutdown the server, use htop to kill the process:
+
 ```bash
 htop
 ```
+
+To check server availability, open any Internet browser, go to <http://<server_ip>:<port>/market/monitor>
+on successful deployment, the browser will display a json string:
+```json
+{"running": "true"}
+```
+
+
 
