@@ -321,10 +321,10 @@ If your Linux system is disconnected , you need restart supervisor service when 
 <wenjie Please edit within this range>
 
 
-After restoring data into MongoDB, we would be able to access the datasets from the browser via <<server_ip>/omnibrowser/client_side>, as illustrated in **3.1 deployment of client-side step-1** 
+After restoring data into MongoDB, we would be able to access the datasets from the browser via <http://server_ip/omnibrowser/client_side>, as illustrated in **3.1 deployment of client-side step-1** 
 
-
+<br><br><br>
 ### Local deployment guide ends here
-
+<br><br><br>
 
 
