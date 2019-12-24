@@ -35,7 +35,7 @@ database.
 
 ## 1.1 The client-side
 
-The client-side is developed using the Vue.js framework. Delivered code in
+The client-side is developed using the **Vue.js** framework. Delivered code in
 production are serialized html & javascript files able to run without any
 additional software requirements (i.e. node.js is not required). While delivered
 packages are self-sufficient in static files, it accesses database information
@@ -43,7 +43,7 @@ via a standardized JSON-API provided by the server-side code.
 
 ## 1.2 The server-side
 
-The server-side is developed using the Python Django framework. It accesses
+The server-side is developed using the **Python Django** framework. It accesses
 the database via a customized API (see below, 1.3 the database) and presents data to
 the client-side via a JSON-API.
 
@@ -252,14 +252,14 @@ to configure the JSON API for the client side.
 
 ### Step 1 - Install MongoDB
 
-`Official guide` of MongoDB installation is available at: <https://docs.mongodb.com/manual/administration/install-on-linux/>. Please select the appropriate version for your system.
+`Official guide` of **MongoDB** installation is available at: <https://docs.mongodb.com/manual/administration/install-on-linux/>. Please select the appropriate version for your system.
 
 Installation using the `binary tar ball` is recommended to avoid using `sudo` and we suggest a thorough go-through of the following manual <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu-tarball/>
 
 ### Step 2 - Configure supervisord
 
-The built-in Cache functions of MongoDB may usually trigger `Linux OOM-killer` which in turn kills the database process.
-To always have database running, we suggest using `supervisord` to run MongoDB as a run-process.
+The built-in Cache functions of **MongoDB** may usually trigger `Linux OOM-killer` which in turn kills the database process.
+To always have database running, we suggest using `supervisord` to run **MongoDB** as a run-process.
 `Supervisor` is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems. Learn more at: http://supervisord.org/.
 
 Make sure before continue:
