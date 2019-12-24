@@ -249,3 +249,9 @@ to configure the JSON API for the client side.
 
 
 ## 3.3 database deployment
+
+### step 1 - install MongoDB
+
+`Official guide` of MongoDB installation is available at: <https://docs.mongodb.com/manual/administration/install-on-linux/>. Please select the appropriate version for your system.
+
+Installation using the `binary version` is recommended to avoid using `sudo`.
