@@ -256,7 +256,7 @@ to configure the JSON API for the client side.
 
 Installation using the `binary tar ball` is recommended to avoid using `sudo` and we suggest a thorough go-through of the following manual <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu-tarball/>
 
-###Step 2 - Configure supervisord
+### Step 2 - Configure supervisord
 
 The built-in Cache functions of MongoDB may usually trigger `Linux OOM-killer` which in turn kills the database process.
 To always have database running, we suggest using `supervisord` to run MongoDB as a run-process.
