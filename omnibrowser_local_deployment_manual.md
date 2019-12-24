@@ -283,7 +283,8 @@ To configure supervisord:
    
    e.g. 
    ```bash
-   command=/home/web/data/database/mongodb/mongodb-linux-x86_64-ubuntu1804-4.2.1/bin/mongod --dbpath /home/web/data/database/mongodb/db --logpath /home/web/data/database/mongodb/log/mongod.log
+   command=/home/web/data/database/mongodb/mongodb-linux-x86_64-ubuntu1804-4.2.1/bin/mongod --dbpath 
+   /home/web/data/database/mongodb/db --logpath /home/web/data/database/mongodb/log/mongod.log
    ```
 4. edit `user` 
    
