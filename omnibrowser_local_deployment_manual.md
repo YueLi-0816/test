@@ -83,7 +83,7 @@ requirements can be satisfied.
     All necessary packages to deploy & run the system is tracked within the
     requirements.txt available within the delivered code package. The environment is 
     sufficient for the deployment & production of all server-side & database codes. We 
-    suggest setting up a saperate Python environment to continue the following operations.
+    suggest setting up a separate Python environment to continue the following operations.
 
 
 
