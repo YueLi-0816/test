@@ -254,4 +254,46 @@ to configure the JSON API for the client side.
 
 `Official guide` of MongoDB installation is available at: <https://docs.mongodb.com/manual/administration/install-on-linux/>. Please select the appropriate version for your system.
 
-Installation using the `binary version` is recommended to avoid using `sudo`.
+Installation using the `binary tar ball` is recommended to avoid using `sudo` and we suggest a thorough go-through of the following manual <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu-tarball/>
+
+### step 2 - run MongoDB with supervisord
+
+the built-in Cache functions of MongoDB may usually trigger `Linux OOM-killer` which in turn kills the database process.
+To always have database running, we suggest using `supervisord` to run MongoDB as a run-process.
+`Supervisor` is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems. Learn more at: http://supervisord.org/.
+
+
+
+command=/home/web/data/database/mongodb/mongodb-linux-x86_64-ubuntu1804-4.2.1/bin/mongod --dbpath /home/web/data/database/mongodb/db --logpath /home/web/data/database/mongodb/log/mongod.log
+
+
+Make sure before continue:
+
+- mongod is not running in the background.
+to stop mongod process, You may use either simply `htop` or follow the instructions here:
+    <https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/#stop-mongod-processes>
+
+To configure supervisord:
+
+1.  open /server_side/supervisord.conf
+    
+2. locate to `[program:mongodb]`
+
+3. edit `command`
+   replace the 3 quoted paths with your specifications
+   
+   ```bash
+   <absolute_path_to_mongod> --dbpath <absolute_path_to_db_path> --logpath <absolute_path_to_log>
+   ```
+   
+   e.g. 
+   ```bash
+   command=/home/web/data/database/mongodb/mongodb-linux-x86_64-ubuntu1804-4.2.1/bin/mongod --dbpath    /home/web/data/database/mongodb/db --logpath /home/web/data/database/mongodb/log/mongod.log
+   ```
+4. edit `user` 
+   
+   replace <user> with you Linux user account
+   
+   ```bash
+   user=<user>
+   ```
