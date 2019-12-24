@@ -256,7 +256,7 @@ to configure the JSON API for the client side.
 
 Installation using the `binary tar ball` is recommended to avoid using `sudo` and we suggest a thorough go-through of the following manual <https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu-tarball/>
 
-### step 2 - run MongoDB with supervisord
+### step 2 - configure supervisord
 
 the built-in Cache functions of MongoDB may usually trigger `Linux OOM-killer` which in turn kills the database process.
 To always have database running, we suggest using `supervisord` to run MongoDB as a run-process.
@@ -293,3 +293,38 @@ To configure supervisord:
    ```bash
    user=<user>
    ```
+   
+5. save changes
+
+### step 3 - run MongoDB from supervisord
+
+Run this command (within Python environment) to start supervisor service.
+
+```
+supervisord -c supervisord.conf
+```
+
+Run this command to see whether the program is running normally.
+
+```
+supervisorctl status
+```
+
+If your Linux system is disconnected , you need restart supervisor service when it is connected again.
+
+
+### step 4 - restore data into MongoDB
+
+**Wenjie would you mind completing this? since I'm not familiar with your final-delivery format.**
+
+<
+edit within this range
+>
+
+After restoring data into MongoDB, we would be able to access the datasets from the browser via <server_ip>/omnibrowser/client_side, as illustrated in **3.1 deployment of client-side step-1** 
+
+
+**3 Local deployment guide end here**
+
+
+
