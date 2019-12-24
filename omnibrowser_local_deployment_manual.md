@@ -184,4 +184,42 @@ make sure before continue:
 
 - Apache or Nginx has been installed for internet access configuration, we'll use it to configure the <port> of JSON-API.
 - We're within the isolated Python environment.
+    
+    
+### step 1 - run server
+
+the server-side code will look at
+
+```bash
+server_side/
+├── Abio
+├── algorithm.py
+├── cell_by_gene.py
+├── database_API.py
+├── gene_reference
+├── human_gene.txt
+├── manage.py
+├── market
+├── mus_gene.txt
+├── requirements.txt
+├── restore.py
+├── summary.py
+└── supervisord.conf
+```
+
+To run server, within the Python environment:
+
+```bash
+cd path_to_server_side/server_side/
+```
+
+```bash
+nohup python3 manage.py runserver 0:<port>
+```
+
+Since we used the nohup command, the server will be running in the background no matter whether we close the ssh connection, unless there's operation system reboot.
+To shutdown the server, use htop to kill the process:
+```bash
+htop
+```
 
