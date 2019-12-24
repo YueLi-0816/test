@@ -92,8 +92,6 @@ requirements can be satisfied.
 
 # 3 Local deployment guide
 
-**lack general intro here**
-
 ## 3.0 setting up Python environment
 
 The delivered package will look like:
