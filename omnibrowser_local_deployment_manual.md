@@ -164,7 +164,7 @@ Display of OmniBrowser welcome page indicates success.
 
 ### step 2 - configure JSON-API
 
-**lack prior**
+We will skip and go back to this part after completing **3.2 server-side deployment step 1**
 
 open /client_side/static/configure.js, which reads like:
 
@@ -175,7 +175,9 @@ window.Global1 = {
 ```
 
 replace <server_ip> & <port> to your specifications.
-    
+
+
+
 
 
 ## 3.2 server-side deployment
@@ -225,11 +227,25 @@ To shutdown the server, use htop to kill the process:
 htop
 ```
 
-To check server availability, open any Internet browser, go to <http://<server_ip>:<port>/market/monitor>
+To check server availability, open any Internet browser, go to 
+
+```bash
+http://<server_ip>:<port>/market/monitor
+```
+
 on successful deployment, the browser will display a json string:
+
 ```json
 {"running": "true"}
 ```
 
+### step 2 - configure the client-side code
+
+Now that we have had the server running, we should go back to **3.1 client-side deployment - step -2** 
+to configure the JSON API for the client side.
 
 
+
+
+
+## 3.3 database deployment
