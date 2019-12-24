@@ -123,7 +123,7 @@ Follow the instructions to set up the environment:
 
 1.  set up a isolated python environment using conda or virtualenv (<https://virtualenv.pypa.io/en/stable/userguide/>)
 
-2.  install required packages listed in server_side/requirements.txt
+2.  install required packages listed in `server_side/requirements.txt`
 
 3.  activate and perform all following operations within the environment
 
@@ -159,14 +159,14 @@ e.g. (when the server is configured using Apache)
 cp -r client_side /var/www/html/omnibrowser/
 ```
 
-open an Internet browser and go to this directory (e.g. 123.456.789.111/omnibrowser/client_side) to validate internet access.
+open an Internet browser and go to this directory (e.g. `123.456.789.111/omnibrowser/client_side`) to validate internet access.
 Display of OmniBrowser welcome page indicates success.
 
 ### Step 2 - Configure JSON-API
 
 We will skip and go back to this part after completing **3.2 server-side deployment step 1**
 
-open /client_side/static/configure.js, which reads like:
+open `/client_side/static/configure.js`, which reads like:
 
 ```javascript
 window.Global1 = {
@@ -184,7 +184,7 @@ replace `<server_ip>` and `<port>` to your specifications.
 
 make sure before continue:
 
-- Apache or Nginx has been installed for internet access configuration, we'll use it to configure the <port> of JSON-API.
+- Apache or Nginx has been installed for internet access configuration, we'll use it to configure the `<port>` of JSON-API.
 - We're within the isolated Python environment.
     
     
@@ -270,7 +270,7 @@ to stop mongod process, You may use either simply `htop` or follow the instructi
 
 To configure supervisord:
 
-1. Open /server_side/supervisord.conf
+1. Open `/server_side/supervisord.conf`
     
 2. Locate to `[program:mongodb]`
 
