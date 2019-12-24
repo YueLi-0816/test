@@ -262,11 +262,6 @@ the built-in Cache functions of MongoDB may usually trigger `Linux OOM-killer` w
 To always have database running, we suggest using `supervisord` to run MongoDB as a run-process.
 `Supervisor` is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems. Learn more at: http://supervisord.org/.
 
-
-
-command=/home/web/data/database/mongodb/mongodb-linux-x86_64-ubuntu1804-4.2.1/bin/mongod --dbpath /home/web/data/database/mongodb/db --logpath /home/web/data/database/mongodb/log/mongod.log
-
-
 Make sure before continue:
 
 - mongod is not running in the background.
@@ -288,7 +283,7 @@ To configure supervisord:
    
    e.g. 
    ```bash
-   command=/home/web/data/database/mongodb/mongodb-linux-x86_64-ubuntu1804-4.2.1/bin/mongod --dbpath    /home/web/data/database/mongodb/db --logpath /home/web/data/database/mongodb/log/mongod.log
+   command=/home/web/data/database/mongodb/mongodb-linux-x86_64-ubuntu1804-4.2.1/bin/mongod --dbpath /home/web/data/database/mongodb/db --logpath /home/web/data/database/mongodb/log/mongod.log
    ```
 4. edit `user` 
    
