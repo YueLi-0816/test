@@ -174,7 +174,7 @@ window.Global1 = {
 };
 ```
 
-replace <server_ip> and <port> to your specifications.
+replace `<server_ip>` and `<port>` to your specifications.
 
 
 
