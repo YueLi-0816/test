@@ -19,7 +19,7 @@ following order:
 
 5.  Contact
 
-
+<div style="page-break-after: always;"></div>
 
 
 
@@ -56,7 +56,7 @@ We suggest a very brief tour to understand the database-collection-document
 architecture of MongoDB to better understand the system:
 <https://docs.mongodb.com/v4.0/core/databases-and-collections/>
 
-
+<div style="page-break-after: always;"></div>
 
 
 
@@ -85,7 +85,7 @@ requirements can be satisfied.
     sufficient for the deployment & production of all server-side & database codes. We 
     suggest setting up a separate Python environment to continue the following operations.
 
-
+<div style="page-break-after: always;"></div>
 
 
 
@@ -334,7 +334,7 @@ After restoring data into MongoDB, we would be able to access the datasets from 
 ### Local deployment guide ends here
 <br><br><br>
 
-
+<div style="page-break-after: always;"></div>
 
 
 
@@ -346,7 +346,7 @@ After restoring data into MongoDB, we would be able to access the datasets from 
 *3. I think we can make things simpler, we just introduce (1) the database architecture (the collections), (2)what is pymongo and how do we use it as an API (3)the central class in the API (4) a very brief introduction on class-method parameters. 
 maybe sth like https://geoparse.readthedocs.io/en/latest/GEOparse.html and we just have themselves read the codes* <br>
 
-
+<div style="page-break-after: always;"></div>
 
 
 
