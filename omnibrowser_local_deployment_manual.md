@@ -278,13 +278,18 @@ To configure supervisord:
    replace the 3 quoted paths with your specifications
    
    ```bash
-   <absolute_path_to_mongod> --dbpath <absolute_path_to_db_path> --logpath <absolute_path_to_log>
+   <absolute_path_to_mongod> 
+   --dbpath <absolute_path_to_db_path> 
+   --logpath <absolute_path_to_log>
    ```
    
    e.g. 
    ```bash
-   command=/home/web/data/database/mongodb/mongodb-linux-x86_64-ubuntu1804-4.2.1/bin/mongod --dbpath 
-   /home/web/data/database/mongodb/db --logpath /home/web/data/database/mongodb/log/mongod.log
+   command=/home/web/data/database/mongodb
+   /mongodb-linux-x86_64-ubuntu1804-4.2.1/bin/mongod 
+   --dbpath 
+   /home/web/data/database/mongodb/db 
+   --logpath /home/web/data/database/mongodb/log/mongod.log
    ```
 4. Edit `user` 
    
