@@ -1,5 +1,6 @@
 # OmniBrowser Local Deployment Manual
 
+<div style="page-break-after: always;"></div>
 
 # 0. Introduction
 
