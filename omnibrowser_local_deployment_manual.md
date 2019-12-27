@@ -197,7 +197,7 @@ the server-side code will look like
 server_side/
 ├── Abio
 ├── algorithm.py
-├── cell_by_gene.py
+├── cellType_by_gene.py
 ├── database_API.py
 ├── gene_reference
 ├── human_gene.txt
@@ -320,11 +320,35 @@ If your Linux system is disconnected , you need restart supervisor service when 
 
 
 ### Step 4 - Restore data into MongoDB
+The data will look like 
+```bash
+dataset
+├── dataset
+    ├── No_1_1.tar.gz
+    ├── No_2_1.tar.gz
+    ├── No_3_1.tar.gz
+    ├── No_4_1.tar.gz
+    └── ...
+```
 
-*Wenjie would you mind completing this? since I'm not familiar with your final-delivery format.* <br>
-*1. please add a directory sample like above, use tree command from Linux* <br>
-*2. can you clarify a bit more on path configuration? like above maybe* <br>
-*3. can you explain a little bit more on summary.py? at least we should mention when to use it* <br>
+Use the code restore.py in **3.2 Run server - step -2** to restore data into MongoDB.
+```
+python3 restore.py <absolute_path_to_mongorestore>
+```
+
+Here we will introduce another two codes in **3.2 Run server - step -2**,summary.py and cellType_by_gene.py.
+
+The summary.py is used to calculate the summary information of the whole datasets in the MongoDB, including cell number, cell type number, dataset number and artical number.The corresponding numbers will be placed on the front page of the website.
+```
+python3 summary.py
+```
+Because the corresponding numbers will change as the datasets change, you are recommended to run it regularly for example using crontab.
+
+
+Through the cellType_by_gene.py, you will get two matrixes of cellType_by_gene.One is for human and another one is for mouse.It will aggregate all of the datasets in the MongoDB to determine whether some gene is the marker gene of some cell type and save the result as '0' or '1'.It is used to find all datasets with a specific gene as marker gene and the corresponding cell type from the website.
+```
+python3 cellType_by_gene.py
+```
 
 *<wenjie Please edit within this range>* <br>
 
