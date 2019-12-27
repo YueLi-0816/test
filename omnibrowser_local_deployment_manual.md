@@ -446,7 +446,147 @@ class  database_API.DatabaseAPI(target_db)
                Parameters : paga(Dict[str, list]) - paga calculation
 
                             overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+- read_collection_X_obs_by_var(obs_id)
 
+  Parameters : obs_id(int) - the row you needed
+
+  Returns: obs_value
+
+  Return type: list
+
+   - read_collection_X_var_by_obs(var_id)
+
+     Parameters : var_id(int) - the row you needed
+
+     Returns: var_value
+
+     Return type: list
+
+   - read_collection_var(key)
+
+     Parameters : key(str) - gene key
+
+     Returns: gene_value
+
+     Return type: list
+
+   - read_collection_obs(key)
+
+     Parameters : key(str) - cell annotation key
+
+     Returns: cell_annotation_value
+
+     Return type: list
+
+   - read_collection_uns_metadata()
+
+     Returns: metadata
+
+     Return type: dictionary
+
+   - read_collection_gene_set_analysis(method,cell_type)
+
+     Parameters : method(str) - "t-test" or "wilcoxon"
+
+     ​                        cell_type(str) - the cell type you needed
+
+     Returns: gene_set
+
+     Return type: dictionary
+
+   - query_collection_X_obs_by_var(obs_ids)
+
+     Parameters : obs_ids(List[int]) - the rows you needed
+
+     Returns: obs_values
+
+     Return type: numpy array
+
+   - query_collection_X_var_by_obs(var_ids)
+
+     Parameters : var_ids(List[int]) - the rows you needed
+
+     Returns: var_values
+
+     Return type: numpy array
+
+   - query_collection_obs()
+
+     Returns: cell annotation
+
+     Return type: Dict[str,list]
+
+   - query_collection_var()
+
+     Returns: gene annotation
+
+     Return type: Dict[str,list]
+
+   - query_collection_uns_metadata()
+
+     Returns: metadata information
+
+     Return type: Dict[str,Any]
+
+   - query_collection_marker(method)
+
+     Parameters : method(str) - "t-test" or "wilcoxon"
+
+     Returns: marker gene and relevant calculation
+
+     Return type: dictionary
+
+   - query_collection_marker_cluster(method)
+
+     Parameters : method(str) - "t-test" or "wilcoxon
+
+     Returns: marker gene and relevant calculation
+
+     Return type: dictionary
+
+   - query_collection_scibet()
+
+     Returns: matrix
+
+     ​                genes
+
+     ​                cell types
+
+     Return type: numpy array
+
+   - query_collection_paga()
+
+     Returns: node_name,node_size,connectivities
+
+     Return type: numpy array
+
+   - query_collection_gene_set_analysis(method)
+
+     Parameters : method(str) - "t-test" or "wilcoxon"
+
+     Returns: gene set
+
+     Return type: dictionary
+
+   - get_collection_X_obs_by_var()
+
+     Returns: obs_by_var_matrix
+
+     Return type: numpy array
+
+   - get_collection_X_var_by_obs()
+
+     Returns:var_by_obs_matrix
+
+     Return type:numpy array
+
+   - get_collection_geneExpression(gene)
+
+     Parameters : gene(str) - the gene you needed
+
+     Returns: value,message
+
+     Return type: list ,str
   
 <div style="page-break-after: always;"></div>
 
