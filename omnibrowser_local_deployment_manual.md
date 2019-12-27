@@ -379,72 +379,73 @@ class  database_API.DatabaseAPI(target_db)
 
    - write_collection_X_obs_by_var(obs_by_var_matrix,overwrite)
 
-                  Parameters : obs_by_var(numpy array) - the matrix of cell_by_gene
+         Parameters : obs_by_var(numpy array) - the matrix of cell_by_gene
 
-                  overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_X_var_by_obs(var_by_obs_matrix,overwrite)
 
-                  Parameters : var_by_obs(numpy array) - the matrix of gene_by_cell
+         Parameters : var_by_obs(numpy array) - the matrix of gene_by_cell
 
-                  overwrite(True or False) - set "overwrite = True" if you want to overwrite the      collection
+         overwrite(True or False) - set "overwrite = True" if you want to overwrite the      collection
 
    - write_collection_var(var,overwrite)
 
-                 Parameters : var(Dict[str, list]) - gene annotation
-                 overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+         Parameters : var(Dict[str, list]) - gene annotation
+		 
+         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_obs(obs,overwrite)
 
-                Parameters : var(Dict[str, list]) - cell annotation
+         Parameters : var(Dict[str, list]) - cell annotation
 
-  	        overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+  	   overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_uns_metadata(metadata,overwrite)
 
-               Parameters : metadata(Dict[str, Any]) - metadata information
+         Parameters : metadata(Dict[str, Any]) - metadata information
 
-    	       overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+    	 overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_marker(marker,method,overwrite)
 
-               Parameters : marker(Dict[str, Any]) - marker gene of each cell type
+         Parameters : marker(Dict[str, Any]) - marker gene of each cell type
 
-  	       method(str) - 't-test' or 'wilcoxon'
+  	   method(str) - 't-test' or 'wilcoxon'
 
-  	       overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+  	   overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_marker_cluster(marker,method,overwrite)
 
-               Parameters : marker(Dict[str, Any]) - marker gene of each cell type
+         Parameters : marker(Dict[str, Any]) - marker gene of each cell type
 
-  	       method(str) - 't-test' or 'wilcoxon'
+  	   method(str) - 't-test' or 'wilcoxon'
 
-  	       overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+  	   overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_gene_set_analysis(marker,method,overwrite)
 
-               Parameters : marker(Dict[str, Any]) - marker gene of each cell type
+         Parameters : marker(Dict[str, Any]) - marker gene of each cell type
 
-  	       method(str) - 't-test' or 'wilcoxon'
+  	   method(str) - 't-test' or 'wilcoxon'
 
-  	       overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+  	   overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_scibet(scibet_npy,genes,cell_types,overwrite)
 
-               Parameters : scibet_npy(numpy array) - scibet calculation
+         Parameters : scibet_npy(numpy array) - scibet calculation
 
-  	       gene(numpy array) - gene list
+  	   gene(numpy array) - gene list
 
-               cell_types(numpyarray) - cell type list
+         cell_types(numpyarray) - cell type list
 
-  	       overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+  	   overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_paga(paga,overwrite)
 
-               Parameters : paga(Dict[str, list]) - paga calculation
+         Parameters : paga(Dict[str, list]) - paga calculation
 
-               overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 	       
    - read_collection_X_obs_by_var(obs_id)
 
