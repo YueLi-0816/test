@@ -323,12 +323,11 @@ If your Linux system is disconnected , you need restart supervisor service when 
 The data will look like 
 ```bash
 dataset/
-├── dataset
-    ├── No_1_1.tar.gz
-    ├── No_2_1.tar.gz
-    ├── No_3_1.tar.gz
-    ├── No_4_1.tar.gz
-    └── ...
+├── No_1_1.tar.gz
+├── No_2_1.tar.gz
+├── No_3_1.tar.gz
+├── No_4_1.tar.gz
+└── ...
 ```
 
 Use the code restore.py in **3.2 Run server - step -2** to restore data into MongoDB.
