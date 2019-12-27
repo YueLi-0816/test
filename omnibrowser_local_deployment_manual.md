@@ -371,6 +371,23 @@ The database_API is an interface
 *3. I think we can make things simpler, we just introduce (1) the database architecture (the collections), (2)what is pymongo and how do we use it as an API (3)the central class in the API (4) a very brief introduction on class-method parameters. 
 maybe sth like https://geoparse.readthedocs.io/en/latest/GEOparse.html and we just have themselves read the codes* <br>
 
+## 4.1 database architecture
+├──No_1_1
+  ├── X_obs_by_var
+  ├── X_var_by_obs
+  ├── obs
+  ├── var
+  ├── t-test
+  ├── t-test_cluster
+  ├── t-test_gene_set_analysis
+  ├── wilcoxon
+  ├── wilcoxon_cluster
+  ├── wilcoxon_gene_set_analysis
+  ├── scibet
+  └── paga
+## 4.2 introduction of the API
+
+## 4.3 central class
 class  database_API.DatabaseAPI(target_db)
 
    Parameters :  target_db(str) - Name of the datases
