@@ -397,9 +397,9 @@ class  database_API.DatabaseAPI(target_db)
 
    - write_collection_obs(obs,overwrite)
 
-         Parameters : var(Dict[str, list]) - cell annotation
-
-  	   overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+         Parameters : obs(Dict[str, list]) - cell annotation
+		 
+         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collecti
 
    - write_collection_uns_metadata(metadata,overwrite)
 
@@ -411,35 +411,35 @@ class  database_API.DatabaseAPI(target_db)
 
          Parameters : marker(Dict[str, Any]) - marker gene of each cell type
 
-  	   method(str) - 't-test' or 'wilcoxon'
+         method(str) - 't-test' or 'wilcoxon'
 
-  	   overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_marker_cluster(marker,method,overwrite)
 
          Parameters : marker(Dict[str, Any]) - marker gene of each cell type
 
-  	   method(str) - 't-test' or 'wilcoxon'
+         method(str) - 't-test' or 'wilcoxon'
 
-  	   overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_gene_set_analysis(marker,method,overwrite)
 
          Parameters : marker(Dict[str, Any]) - marker gene of each cell type
 
-  	   method(str) - 't-test' or 'wilcoxon'
+         method(str) - 't-test' or 'wilcoxon'
 
-  	   overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_scibet(scibet_npy,genes,cell_types,overwrite)
 
          Parameters : scibet_npy(numpy array) - scibet calculation
 
-  	   gene(numpy array) - gene list
+         gene(numpy array) - gene list
 
          cell_types(numpyarray) - cell type list
 
-  	   overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_paga(paga,overwrite)
 
