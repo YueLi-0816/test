@@ -105,7 +105,7 @@ The delivered package will look like:
 └── server_side
     ├── Abio
     ├── algorithm.py
-    ├── cell_by_gene.py
+    ├── cellType_by_gene.py
     ├── database_API.py
     ├── gene_reference
     ├── human_gene.txt
@@ -322,7 +322,7 @@ If your Linux system is disconnected , you need restart supervisor service when 
 ### Step 4 - Restore data into MongoDB
 The data will look like 
 ```bash
-dataset
+dataset/
 ├── dataset
     ├── No_1_1.tar.gz
     ├── No_2_1.tar.gz
