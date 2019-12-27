@@ -367,9 +367,87 @@ After restoring data into MongoDB, we would be able to access the datasets from 
 *Wenjie would you mind completing this? since I'm not familiar with your final-delivery format.* <br>
 *1. please get some mongo shell view of the 10 collections to clarify it* <br>
 *2. the direct import may cause confusion, what about we just see this is an API introduction and you may just copy paste the definitions?* <br>
+The database_API is an interface 
 *3. I think we can make things simpler, we just introduce (1) the database architecture (the collections), (2)what is pymongo and how do we use it as an API (3)the central class in the API (4) a very brief introduction on class-method parameters. 
 maybe sth like https://geoparse.readthedocs.io/en/latest/GEOparse.html and we just have themselves read the codes* <br>
 
+class  database_API.DatabaseAPI(target_db)
+
+		Parameters :  target_db(str) - Name of the datases
+
+
+
+   -      write_collection_X_obs_by_var(obs_by_var_matrix,overwrite)
+
+                  Parameters : obs_by_var(numpy array) - the matrix of cell_by_gene
+
+     						   overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+
+   -      write_collection_X_var_by_obs(var_by_obs_matrix,overwrite)
+
+                  Parameters : var_by_obs(numpy array) - the matrix of gene_by_cell
+
+						       overwrite(True or False) - set "overwrite = True" if you want to overwrite the      collection
+
+   -      write_collection_var(var,overwrite)
+
+                 Parameters : var(Dict[str, list]) - gene annotation
+
+						      overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+
+   -     write_collection_obs(obs,overwrite)
+
+                Parameters : var(Dict[str, list]) - cell annotation
+
+  						     overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+
+   -     write_collection_uns_metadata(metadata,overwrite)
+
+               Parameters : metadata(Dict[str, Any]) - metadata information
+
+    				        overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+
+  -     write_collection_marker(marker,method,overwrite)
+
+               Parameters : marker(Dict[str, Any]) - marker gene of each cell type
+
+  							method(str) - 't-test' or 'wilcoxon'
+
+  							overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+
+  -     write_collection_marker_cluster(marker,method,overwrite)
+
+               Parameters : marker(Dict[str, Any]) - marker gene of each cell type
+
+  							method(str) - 't-test' or 'wilcoxon'
+
+  							overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+
+  -     write_collection_gene_set_analysis(marker,method,overwrite)
+
+               Parameters : marker(Dict[str, Any]) - marker gene of each cell type
+
+  							method(str) - 't-test' or 'wilcoxon'
+
+  							overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+
+  -     write_collection_scibet(scibet_npy,genes,cell_types,overwrite)
+
+               Parameters : scibet_npy(numpy array) - scibet calculation
+
+  							gene(numpy array) - gene list
+
+                            cell_types(numpyarray) - cell type list
+
+  							overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+
+  -     write_collection_paga(paga,overwrite)
+
+               Parameters : paga(Dict[str, list]) - paga calculation
+
+                            overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+
+  
 <div style="page-break-after: always;"></div>
 
 
