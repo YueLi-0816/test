@@ -372,6 +372,7 @@ The database_API is an interface
 maybe sth like https://geoparse.readthedocs.io/en/latest/GEOparse.html and we just have themselves read the codes* <br>
 
 ## 4.1 database architecture
+```bash
 ├──No_1_1
   ├── X_obs_by_var
   ├── X_var_by_obs
@@ -385,6 +386,7 @@ maybe sth like https://geoparse.readthedocs.io/en/latest/GEOparse.html and we ju
   ├── wilcoxon_gene_set_analysis
   ├── scibet
   └── paga
+```
 ## 4.2 introduction of the API
 
 ## 4.3 central class
