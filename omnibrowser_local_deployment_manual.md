@@ -320,6 +320,7 @@ If your Linux system is disconnected , you need restart supervisor service when 
 
 
 ### Step 4 - Restore data into MongoDB
+#### restore.py
 The data will look like 
 ```bash
 dataset/
@@ -336,14 +337,14 @@ python3 restore.py <absolute_path_to_mongorestore>
 ```
 
 Here we will introduce another two codes in **3.2 Run server - step -2**,summary.py and cellType_by_gene.py.
-
+#### summary.py
 The summary.py is used to calculate the summary information of the whole datasets in the MongoDB, including cell number, cell type number, dataset number and artical number.The corresponding numbers will be placed on the front page of the website.
 ```
 python3 summary.py
 ```
 Because the corresponding numbers will change as the datasets change, you are recommended to run it regularly for example using crontab.
 
-
+#### cellType_by_gene.py
 Through the cellType_by_gene.py, you will get two matrixes of cellType_by_gene.One is for human and another one is for mouse.It will aggregate all of the datasets in the MongoDB to determine whether some gene is the marker gene of some cell type and save the result as '0' or '1'.It is used to find all datasets with a specific gene as marker gene and the corresponding cell type from the website.
 ```
 python3 cellType_by_gene.py
@@ -388,8 +389,10 @@ maybe sth like https://geoparse.readthedocs.io/en/latest/GEOparse.html and we ju
   └── paga
 ```
 ## 4.2 introduction of the API
-PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python.
+The PyMongo distribution contains tools for interacting with MongoDB database from Python.We build an API with the help of PyMongo to write data into the MongoDB and get data from the MongoDB.
+
 ## 4.3 central class
+
 class  database_API.DatabaseAPI(target_db)
 
    Parameters :  target_db(str) - Name of the datases
@@ -406,17 +409,17 @@ class  database_API.DatabaseAPI(target_db)
 
          Parameters : var_by_obs(numpy array) - the matrix of gene_by_cell
 
-         overwrite(True or False) - set "overwrite = True" if you want to overwrite the      collection
+         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_var(var,overwrite)
 
-         Parameters : var(Dict[str, list]) - gene annotation
+         Parameters : var(Dict[str, list]) - gene annotation("geneSymbol","ensemblID")
 		 
          overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_obs(obs,overwrite)
 
-         Parameters : obs(Dict[str, list]) - cell annotation
+         Parameters : obs(Dict[str, list]) - cell annotation("cellID","clusterID","clusterName","sampleID","cellOntologyName",	"cellOntologyID","meta_sourceName","FACSMarker","tSNE1","tSNE2","UMAP1","UMAP2","meta_cellType","clusteringMethod","clusterName_scibet")
 		 
          overwrite(True or False) - set "overwrite = True" if you want to overwrite the collecti
 
@@ -427,6 +430,8 @@ class  database_API.DatabaseAPI(target_db)
     	 overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_marker(marker,method,overwrite)
+   
+        gene is used as key for storage
 
          Parameters : marker(Dict[str, Any]) - marker gene of each cell type
 
@@ -435,6 +440,8 @@ class  database_API.DatabaseAPI(target_db)
          overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_marker_cluster(marker,method,overwrite)
+   
+       cluster is used as key for storage
 
          Parameters : marker(Dict[str, Any]) - marker gene of each cell type
 
@@ -443,6 +450,8 @@ class  database_API.DatabaseAPI(target_db)
          overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_gene_set_analysis(marker,method,overwrite)
+   
+       save the calculation of GO terms
 
          Parameters : marker(Dict[str, Any]) - marker gene of each cell type
 
@@ -451,6 +460,8 @@ class  database_API.DatabaseAPI(target_db)
          overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_scibet(scibet_npy,genes,cell_types,overwrite)
+       
+       save the calculation of scibet
 
          Parameters : scibet_npy(numpy array) - scibet calculation
 
@@ -461,6 +472,8 @@ class  database_API.DatabaseAPI(target_db)
          overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_paga(paga,overwrite)
+   
+       save the calculation of paga
 
          Parameters : paga(Dict[str, list]) - paga calculation
 
@@ -484,7 +497,7 @@ class  database_API.DatabaseAPI(target_db)
 
    - read_collection_var(key)
 
-         Parameters : key(str) - gene key
+         Parameters : key(str) - gene key("geneSymbol","ensemblID")
 
          Returns: gene_value
 
@@ -492,7 +505,7 @@ class  database_API.DatabaseAPI(target_db)
 
    - read_collection_obs(key)
 
-         Parameters : key(str) - cell annotation key
+         Parameters : key(str) - cell annotation key("cellID","clusterID","clusterName",...)
 
          Returns: cell_annotation_value
 
@@ -510,7 +523,7 @@ class  database_API.DatabaseAPI(target_db)
 
          cell_type(str) - the cell type you needed
 
-         Returns: gene_set
+         Returns: GO terms calculation of a specific cell type
 
          Return type: dictionary
 
