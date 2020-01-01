@@ -389,13 +389,13 @@ maybe sth like https://geoparse.readthedocs.io/en/latest/GEOparse.html and we ju
   └── paga
 ```
 ## 4.2 introduction of the API
-The PyMongo distribution contains tools for interacting with MongoDB database from Python.We build an API with the help of PyMongo to write data into the MongoDB and get data from the MongoDB.
+The PyMongo distribution contains tools for interacting with MongoDB database from Python.We build an API with the help of PyMongo to write data into the MongoDB and get data from the MongoDB.The input and output data both have the fixed format.All of the collections are independent of each other.So you can just pass the function if you do not have the existing data or the calculation results.
 
 ## 4.3 central class
 
 class  database_API.DatabaseAPI(target_db)
 
-   Parameters :  target_db(str) - Name of the datases
+   Parameters :  target_db(str) - Name of the datasets
 
 
 
@@ -431,9 +431,9 @@ class  database_API.DatabaseAPI(target_db)
 
    - write_collection_marker(marker,method,overwrite)
    
-        gene is used as key for storage
+        genes are used as keys for storage
 
-         Parameters : marker(Dict[str, Any]) - marker gene of each cell type
+         Parameters : marker(Dict[str, Any]) - marker gene of each cell type({cluster_1 : {"geneSymbol":[],"statistics":[],"logFC":[],"pValue":[],"qValue":[]},...})
 
          method(str) - 't-test' or 'wilcoxon'
 
@@ -441,9 +441,9 @@ class  database_API.DatabaseAPI(target_db)
 
    - write_collection_marker_cluster(marker,method,overwrite)
    
-       cluster is used as key for storage
+       clusters are used as key for storage
 
-         Parameters : marker(Dict[str, Any]) - marker gene of each cell type
+         Parameters : marker(Dict[str, Any]) - marker gene of each cell type({cluster_1 : {"geneSymbol":[],"statistics":[],"logFC":[],"pValue":[],"qValue":[]},...})
 
          method(str) - 't-test' or 'wilcoxon'
 
@@ -451,9 +451,9 @@ class  database_API.DatabaseAPI(target_db)
 
    - write_collection_gene_set_analysis(marker,method,overwrite)
    
-       save the calculation of GO terms
+       calculate  GO terms and save the results,the input is the marker gene
 
-         Parameters : marker(Dict[str, Any]) - marker gene of each cell type
+         Parameters : marker(Dict[str, Any]) - marker gene of each cell type({cluster_1 : {"geneSymbol":[],"statistics":[],"logFC":[],"pValue":[],"qValue":[]},...})
 
          method(str) - 't-test' or 'wilcoxon'
 
@@ -461,7 +461,7 @@ class  database_API.DatabaseAPI(target_db)
 
    - write_collection_scibet(scibet_npy,genes,cell_types,overwrite)
        
-       save the calculation of scibet
+       save the calculation of scibet(calculated result)
 
          Parameters : scibet_npy(numpy array) - scibet calculation
 
@@ -473,7 +473,7 @@ class  database_API.DatabaseAPI(target_db)
 
    - write_collection_paga(paga,overwrite)
    
-       save the calculation of paga
+       save the calculation of paga(calculated result)
 
          Parameters : paga(Dict[str, list]) - paga calculation
 
@@ -616,6 +616,17 @@ class  database_API.DatabaseAPI(target_db)
          Returns: value,message
 
          Return type: list ,str
+	
+class database_API.Databases()
+    
+   - get_public_datasets()
+      
+      get all the datasets
+        
+	Returns : datasets
+	
+	Return type : list
+
   
 <div style="page-break-after: always;"></div>
 
