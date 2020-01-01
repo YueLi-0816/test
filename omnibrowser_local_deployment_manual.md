@@ -621,11 +621,11 @@ class database_API.Databases()
     
    - get_public_datasets()
       
-      get all the datasets
+       get all the datasets
         
-	Returns : datasets
+         Returns : datasets
 	
-	Return type : list
+         Return type : list
 
   
 <div style="page-break-after: always;"></div>
