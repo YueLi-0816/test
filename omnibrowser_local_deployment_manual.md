@@ -367,13 +367,6 @@ After restoring data into MongoDB, we would be able to access the datasets from 
 
 # 4 Database API walk-through
 
-*Wenjie would you mind completing this? since I'm not familiar with your final-delivery format.* <br>
-*1. please get some mongo shell view of the 10 collections to clarify it* <br>
-*2. the direct import may cause confusion, what about we just see this is an API introduction and you may just copy paste the definitions?* <br>
-The database_API is an interface 
-*3. I think we can make things simpler, we just introduce (1) the database architecture (the collections), (2)what is pymongo and how do we use it as an API (3)the central class in the API (4) a very brief introduction on class-method parameters. 
-maybe sth like https://geoparse.readthedocs.io/en/latest/GEOparse.html and we just have themselves read the codes* <br>
-
 ## 4.1 database architecture
 ```bash
 ├──No_1_1
