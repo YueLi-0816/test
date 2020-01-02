@@ -338,7 +338,6 @@ Use the code restore.py to restore data into MongoDB.
 python3 restore.py <absolute_path_to_mongorestore>
 ```
 
-Here we will introduce another two codes in **3.2 Run server - step -2**,summary.py and cellType_by_gene.py.
 #### summary.py
 The summary.py is used to calculate the summary information of the whole datasets in the MongoDB, including cell number, cell type number, dataset number and artical number.The corresponding numbers will be placed on the front page of the website.
 ```
@@ -346,11 +345,6 @@ python3 summary.py
 ```
 Because the corresponding numbers will change as the datasets change, you are recommended to run it regularly for example using crontab.
 
-#### cellType_by_gene.py
-Through the cellType_by_gene.py, you will get two matrixes of cellType_by_gene.One is for human and another one is for mouse.It will aggregate all of the datasets in the MongoDB to determine whether some gene is the marker gene of some cell type and save the result as '0' or '1'.It is used to find all datasets with a specific gene as marker gene and the corresponding cell type from the website.
-```
-python3 cellType_by_gene.py
-```
 
 *<wenjie Please edit within this range>* <br>
 
@@ -368,9 +362,18 @@ After restoring data into MongoDB, we would be able to access the datasets from 
 # 4 Database API walk-through
 
 ## 4.1 database architecture
+There are three basic levels,including database,collection and document.
+
+Database: In simple words, it can be called the physical container for data. Each of the databases has its own set of files on the file system with multiple databases existing on a single MongoDB server.
+
+Collection: A group of database documents can be called a collection. The RDBMS equivalent to a collection is a table. The entire collection exists within a single database. There are no schemas when it comes to collections. Inside the collection, various documents can have varied fields, but mostly the documents within a collection are meant for the same purpose or for serving the same end goal.
+
+Document: A set of key–value pairs can be designated as a document. Documents are associated with dynamic schemas. The benefit of having dynamic schemas is that a document in a single collection does not have to possess the same structure or fields. Also, the common fields in a collection’s document can have varied types of data.
+
 ```bash
-├──No_1_1
-  ├── X_obs_by_var
+├──No_1_1/database
+  ├── X_obs_by_var/collection
+      ├──{'key':'value'}/document
   ├── X_var_by_obs
   ├── obs
   ├── var
