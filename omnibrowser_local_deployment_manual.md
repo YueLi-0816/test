@@ -323,15 +323,17 @@ If your Linux system is disconnected , you need restart supervisor service when 
 #### restore.py
 The data will look like 
 ```bash
-dataset/
-├── No_1_1.tar.gz
-├── No_2_1.tar.gz
-├── No_3_1.tar.gz
-├── No_4_1.tar.gz
-└── ...
+data
+├── restore.py
+└── dataset
+    ├── No_1_1.tar.gz
+    ├── No_2_1.tar.gz
+    ├── No_3_1.tar.gz
+    ├── No_4_1.tar.gz
+    └── ...
 ```
 
-Use the code restore.py in **3.2 Run server - step -2** to restore data into MongoDB.
+Use the code restore.py to restore data into MongoDB.
 ```
 python3 restore.py <absolute_path_to_mongorestore>
 ```
