@@ -260,7 +260,7 @@ Installation using the `binary tar ball` is recommended to avoid using `sudo` an
 ### Step 2 - Configure supervisord
 
 The built-in Cache functions of **MongoDB** may usually trigger `Linux OOM-killer` which in turn kills the database process.
-To always have database running, we suggest using `supervisord` to run **MongoDB** as a run-process.
+To always have database running, we suggest using `supervisord` to run **MongoDB** as a sub-process.
 `Supervisor` is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems. Learn more at: http://supervisord.org/.
 
 Make sure before continue:
