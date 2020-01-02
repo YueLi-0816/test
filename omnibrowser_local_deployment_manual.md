@@ -374,6 +374,7 @@ Document: A set of key–value pairs can be designated as a document. Documents 
 ├──No_1_1/database
   ├── X_obs_by_var/collection
       ├──{'key':'value'}/document
+      ├──{'key':'value'}/document
   ├── X_var_by_obs
   ├── obs
   ├── var
