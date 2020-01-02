@@ -105,7 +105,6 @@ The delivered package will look like:
 └── server_side
     ├── Abio
     ├── algorithm.py
-    ├── cellType_by_gene.py
     ├── database_API.py
     ├── gene_reference
     ├── human_gene.txt
@@ -113,7 +112,6 @@ The delivered package will look like:
     ├── market
     ├── mus_gene.txt
     ├── requirements.txt
-    ├── restore.py
     ├── summary.py
     └── supervisord.conf
 ```
@@ -197,7 +195,6 @@ the server-side code will look like
 server_side/
 ├── Abio
 ├── algorithm.py
-├── cellType_by_gene.py
 ├── database_API.py
 ├── gene_reference
 ├── human_gene.txt
@@ -205,7 +202,6 @@ server_side/
 ├── market
 ├── mus_gene.txt
 ├── requirements.txt
-├── restore.py
 ├── summary.py
 └── supervisord.conf
 ```
