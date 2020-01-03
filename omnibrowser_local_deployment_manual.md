@@ -425,14 +425,14 @@ Parameters :  target_db(str) - Name of the datasets
 
    - write_collection_X_obs_by_var(obs_by_var_matrix,overwrite)
    
-   ```bash
+```bash
    Parameters :
    
    obs_by_var(numpy array) - the matrix of cell_by_gene
    
    overwrite(True or False) 
    - set "overwrite = True" if you want to overwrite the collection
-   ```
+```
    
    - write_collection_X_var_by_obs(var_by_obs_matrix,overwrite)
 
@@ -447,15 +447,18 @@ Parameters :  target_db(str) - Name of the datasets
 
    - write_collection_var(var,overwrite)
 
+```bash
     Parameters : 
     
     var(Dict[str, list]) - gene annotation("geneSymbol","ensemblID")
 		 
     overwrite(True or False)
     - set "overwrite = True" if you want to overwrite the collection
+```
 
    - write_collection_obs(obs,overwrite)
 
+```bash
     Parameters : 
     
     obs(Dict[str, list])
@@ -466,21 +469,25 @@ Parameters :  target_db(str) - Name of the datasets
                       "clusterName_scibet")
 		 
      overwrite(True or False)
-     - set "overwrite = True" if you want to overwrite the collecti
+     - set "overwrite = True" if you want to overwrite the collection
 
+```
    - write_collection_uns_metadata(metadata,overwrite)
 
+```bash
     Parameters : 
     
     metadata(Dict[str, Any]) - metadata information
 
     overwrite(True or False)
     - set "overwrite = True" if you want to overwrite the collection
+```
 
    - write_collection_marker(marker,method,overwrite)
    
        genes are used as keys for storage
 
+```bash
     Parameters : 
     
     marker(Dict[str, Any])
@@ -494,11 +501,13 @@ Parameters :  target_db(str) - Name of the datasets
 
     overwrite(True or False)
     - set "overwrite = True" if you want to overwrite the collection
+```
 
    - write_collection_marker_cluster(marker,method,overwrite)
    
        clusters are used as key for storage
 
+```bash
     Parameters : 
     
     marker(Dict[str, Any])
@@ -512,11 +521,13 @@ Parameters :  target_db(str) - Name of the datasets
 
     overwrite(True or False)
     - set "overwrite = True" if you want to overwrite the collection
+```
 
    - write_collection_gene_set_analysis(marker,method,overwrite)
    
        calculate  GO terms and save the results,the input is the marker gene
 
+```bash
     Parameters : 
     
     marker(Dict[str, Any])
@@ -530,11 +541,13 @@ Parameters :  target_db(str) - Name of the datasets
 
     overwrite(True or False)
     - set "overwrite = True" if you want to overwrite the collection
+```
 
    - write_collection_scibet(scibet_npy,genes,cell_types,overwrite)
        
        save the calculation of scibet(calculated result)
 
+```bash
     Parameters : 
     
     scibet_npy(numpy array) - scibet calculation
@@ -545,20 +558,24 @@ Parameters :  target_db(str) - Name of the datasets
 
     overwrite(True or False)
     - set "overwrite = True" if you want to overwrite the collection
+```
 
    - write_collection_paga(paga,overwrite)
    
        save the calculation of paga(calculated result)
 
+```bash
     Parameters : 
     
     paga(Dict[str, list]) - paga calculation
 
     overwrite(True or False)
     - set "overwrite = True" if you want to overwrite the collection
-	       
+```
+
    - read_collection_X_obs_by_var(obs_id)
 
+```bash
     Parameters : 
     
     obs_id(int) - the row you needed
@@ -567,8 +584,10 @@ Parameters :  target_db(str) - Name of the datasets
 
     Return type: list
 
+```
    - read_collection_X_var_by_obs(var_id)
 
+```bash
     Parameters : 
     
     var_id(int) - the row you needed
@@ -576,9 +595,11 @@ Parameters :  target_db(str) - Name of the datasets
     Returns: var_value
 
     Return type: list
+```
 
    - read_collection_var(key)
 
+```bash
     Parameters : 
     
     key(str) - gene key("geneSymbol","ensemblID")
@@ -586,9 +607,11 @@ Parameters :  target_db(str) - Name of the datasets
     Returns: gene_value
 
     Return type: list
+```
 
    - read_collection_obs(key)
 
+```bash
     Parameters : 
     
     key(str) - cell annotation key("cellID","clusterID","clusterName",...)
@@ -596,15 +619,20 @@ Parameters :  target_db(str) - Name of the datasets
     Returns: cell_annotation_value
 
     Return type: list
+```
 
    - read_collection_uns_metadata()
 
+```bash
     Returns: metadata
 
     Return type: dictionary
 
+```
+
    - read_collection_gene_set_analysis(method,cell_type)
 
+```bash
     Parameters : 
     
     method(str) - "t-test" or "wilcoxon"
@@ -614,9 +642,11 @@ Parameters :  target_db(str) - Name of the datasets
     Returns: GO terms calculation of a specific cell type
 
     Return type: dictionary
+```
 
    - query_collection_X_obs_by_var(obs_ids)
 
+```bash
     Parameters : 
     
     obs_ids(List[int]) - the rows you needed
@@ -624,9 +654,11 @@ Parameters :  target_db(str) - Name of the datasets
     Returns: obs_values
 
     Return type: numpy array
+```
 
    - query_collection_X_var_by_obs(var_ids)
 
+```bash
     Parameters : 
     
     var_ids(List[int]) - the rows you needed
@@ -634,27 +666,35 @@ Parameters :  target_db(str) - Name of the datasets
     Returns: var_values
 
     Return type: numpy array
+```
 
    - query_collection_obs()
 
+```bash
     Returns: cell annotation
 
     Return type: Dict[str,list]
+```
 
    - query_collection_var()
 
+```bash
     Returns: gene annotation
 
     Return type: Dict[str,list]
+```
 
    - query_collection_uns_metadata()
 
+```bash
     Returns: metadata information
 
     Return type: Dict[str,Any]
+```
 
    - query_collection_marker(method)
 
+```bash
     Parameters : 
     
     method(str) - "t-test" or "wilcoxon"
@@ -662,9 +702,11 @@ Parameters :  target_db(str) - Name of the datasets
     Returns: marker gene and relevant calculation
 
     Return type: dictionary
+```
 
    - query_collection_marker_cluster(method)
 
+```bash
     Parameters : 
     
     method(str) - "t-test" or "wilcoxon
@@ -672,21 +714,27 @@ Parameters :  target_db(str) - Name of the datasets
     Returns: marker gene and relevant calculation
 
     Return type: dictionary
+```
 
    - query_collection_scibet()
 
+```bash
     Returns: matrix，genes，cell types
 
     Return type: numpy array
+```
 
    - query_collection_paga()
  
+```bash
     Returns: node_name,node_size,connectivities
 
     Return type: numpy array
 
+```
    - query_collection_gene_set_analysis(method)
 
+```bash
     Parameters : 
     
     method(str) - "t-test" or "wilcoxon"
@@ -694,21 +742,27 @@ Parameters :  target_db(str) - Name of the datasets
     Returns: gene set
 
     Return type: dictionary
+```
 
    - get_collection_X_obs_by_var()
 
+```bash
     Returns: obs_by_var_matrix
 
     Return type: numpy array
+```
 
    - get_collection_X_var_by_obs()
 
+```bash
     Returns:var_by_obs_matrix
 
     Return type:numpy array
+```
 
    - get_collection_geneExpression(gene)
 
+```bash
     Parameters : 
     
     gene(str) - the gene you needed
@@ -716,16 +770,19 @@ Parameters :  target_db(str) - Name of the datasets
     Returns: value,message
 
     Return type: list ,str
-	
+```
+
 class database_API.Databases()
     
    - get_public_datasets()
       
        get all the datasets
-        
+
+```bash
     Returns : datasets
 	
     Return type : list
+```
 
   
 <div style="page-break-after: always;"></div>
