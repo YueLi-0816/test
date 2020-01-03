@@ -426,25 +426,31 @@ class  database_API.DatabaseAPI(target_db)
 
          Parameters : obs_by_var(numpy array) - the matrix of cell_by_gene
 
-         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+         overwrite(True or False) 
+	- set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_X_var_by_obs(var_by_obs_matrix,overwrite)
 
          Parameters : var_by_obs(numpy array) - the matrix of gene_by_cell
 
-         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+         overwrite(True or False)
+	- set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_var(var,overwrite)
 
          Parameters : var(Dict[str, list]) - gene annotation("geneSymbol","ensemblID")
 		 
-         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+         overwrite(True or False)
+	- set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_obs(obs,overwrite)
 
-         Parameters : obs(Dict[str, list]) - cell annotation("cellID","clusterID","clusterName","sampleID","cellOntologyName",	"cellOntologyID","meta_sourceName","FACSMarker","tSNE1","tSNE2","UMAP1","UMAP2","meta_cellType","clusteringMethod","clusterName_scibet")
+         Parameters : obs(Dict[str, list])
+	- cell annotation("cellID","clusterID","clusterName","sampleID","cellOntologyName",	"cellOntologyID","meta_sourceName","FACSMarker","tSNE1","tSNE2",
+	"UMAP1","UMAP2","meta_cellType","clusteringMethod","clusterName_scibet")
 		 
-         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collecti
+         overwrite(True or False)
+	 - set "overwrite = True" if you want to overwrite the collecti
 
    - write_collection_uns_metadata(metadata,overwrite)
 
