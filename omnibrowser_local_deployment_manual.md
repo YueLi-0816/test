@@ -460,8 +460,8 @@ class  database_API.DatabaseAPI(target_db)
     - cell annotation("cellID","clusterID","clusterName",
                       "sampleID","cellOntologyName","cellOntologyID",
                       "meta_sourceName","FACSMarker","tSNE1","tSNE2",
-		      "UMAP1","UMAP2","meta_cellType","clusteringMethod",
-		      "clusterName_scibet")
+                      "UMAP1","UMAP2","meta_cellType","clusteringMethod",
+                      "clusterName_scibet")
 		 
      overwrite(True or False)
      - set "overwrite = True" if you want to overwrite the collecti
