@@ -419,20 +419,18 @@ write_collection_X_obs_by_var(obs_by_var_matrix,overwrite=True)
 class  database_API.DatabaseAPI(target_db)
 
 ```
-  Parameters :  target_db(str) - Name of the datasets
+Parameters :  target_db(str) - Name of the datasets
 ```
 
 
    - write_collection_X_obs_by_var(obs_by_var_matrix,overwrite)
    
-   ```
-   Parameters :
+   `Parameters :
    
    obs_by_var(numpy array) - the matrix of cell_by_gene
    
    overwrite(True or False) 
-   - set "overwrite = True" if you want to overwrite the collection
-   ```
+   - set "overwrite = True" if you want to overwrite the collection`
 
    - write_collection_X_var_by_obs(var_by_obs_matrix,overwrite)
 
