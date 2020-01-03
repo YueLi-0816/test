@@ -353,9 +353,11 @@ Because the corresponding numbers will change as the datasets change, you are re
 #### explore your data
 After restoring data into MongoDB, we would be able to access the datasets from the browser via <http://server_ip/omnibrowser/client_side>, as illustrated in **3.1 deployment of client-side step-1** 
 
+<p align="center">
 <br><br><br>
 ### Local deployment guide ends here
 <br><br><br>
+</p>
 
 <div style="page-break-after: always;"></div>
 
