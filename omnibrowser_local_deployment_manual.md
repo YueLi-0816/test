@@ -419,7 +419,7 @@ write_collection_X_obs_by_var(obs_by_var_matrix,overwrite=True)
 class  database_API.DatabaseAPI(target_db)
 
 ```
-   Parameters :  target_db(str) - Name of the datasets
+	Parameters :  target_db(str) - Name of the datasets
 ```
 
 
