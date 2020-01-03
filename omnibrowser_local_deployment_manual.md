@@ -355,7 +355,7 @@ After restoring data into MongoDB, we would be able to access the datasets from 
 
 <p align="center">
 <br><br><br>
-### Local deployment guide ends here
+<b>Local deployment guide ends here</b>
 <br><br><br>
 </p>
 
