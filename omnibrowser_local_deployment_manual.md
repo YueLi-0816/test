@@ -126,6 +126,7 @@ Follow the instructions to set up the environment:
 
 3.  activate and perform all following operations within the environment
 
+<div style='page-break-after: always;'></div>
 
 ## 3.1 Client-side deployment
 
@@ -455,6 +456,8 @@ Parameters :  target_db(str) - Name of the datasets
     overwrite(True or False)
     - set "overwrite = True" if you want to overwrite the collection
 ```
+
+<div style='page-break-after:always'></div>
 
    - write_collection_obs(obs,overwrite)
 
