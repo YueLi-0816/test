@@ -468,29 +468,48 @@ class  database_API.DatabaseAPI(target_db)
 
    - write_collection_uns_metadata(metadata,overwrite)
 
-         Parameters : metadata(Dict[str, Any]) - metadata information
+    Parameters : 
+    
+    metadata(Dict[str, Any]) - metadata information
 
-    	 overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+    overwrite(True or False)
+    - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_marker(marker,method,overwrite)
    
-        genes are used as keys for storage
+       genes are used as keys for storage
 
-         Parameters : marker(Dict[str, Any]) - marker gene of each cell type({cluster_1 : {"geneSymbol":[],"statistics":[],"logFC":[],"pValue":[],"qValue":[]},...})
+    Parameters : 
+    
+    marker(Dict[str, Any])
+    - marker gene of each cell type({cluster_1 : {"geneSymbol":[],
+                                                  "statistics":[],
+                                                  "logFC":[],
+                                                  "pValue":[],
+                                                  "qValue":[]},...})
 
-         method(str) - 't-test' or 'wilcoxon'
+    method(str) - 't-test' or 'wilcoxon'
 
-         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+    overwrite(True or False)
+    - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_marker_cluster(marker,method,overwrite)
    
        clusters are used as key for storage
 
-         Parameters : marker(Dict[str, Any]) - marker gene of each cell type({cluster_1 : {"geneSymbol":[],"statistics":[],"logFC":[],"pValue":[],"qValue":[]},...})
+    Parameters : 
+    
+    marker(Dict[str, Any])
+    - marker gene of each cell type({cluster_1 : {"geneSymbol":[],
+                                                  "statistics":[],
+                                                  "logFC":[],
+                                                  "pValue":[],
+                                                  "qValue":[]},...})
 
-         method(str) - 't-test' or 'wilcoxon'
+    method(str) - 't-test' or 'wilcoxon'
 
-         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+    overwrite(True or False)
+    - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_gene_set_analysis(marker,method,overwrite)
    
