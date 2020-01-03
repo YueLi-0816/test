@@ -515,69 +515,91 @@ class  database_API.DatabaseAPI(target_db)
    
        calculate  GO terms and save the results,the input is the marker gene
 
-         Parameters : marker(Dict[str, Any]) - marker gene of each cell type({cluster_1 : {"geneSymbol":[],"statistics":[],"logFC":[],"pValue":[],"qValue":[]},...})
+    Parameters : 
+    
+    marker(Dict[str, Any])
+    - marker gene of each cell type({cluster_1 : {"geneSymbol":[],
+                                                  "statistics":[],
+                                                  "logFC":[],
+                                                  "pValue":[],
+                                                  "qValue":[]},...})
 
-         method(str) - 't-test' or 'wilcoxon'
+    method(str) - 't-test' or 'wilcoxon'
 
-         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+    overwrite(True or False)
+    - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_scibet(scibet_npy,genes,cell_types,overwrite)
        
        save the calculation of scibet(calculated result)
 
-         Parameters : scibet_npy(numpy array) - scibet calculation
+    Parameters : 
+    
+    scibet_npy(numpy array) - scibet calculation
 
-         gene(numpy array) - gene list
+    gene(numpy array) - gene list
 
-         cell_types(numpyarray) - cell type list
+    cell_types(numpyarray) - cell type list
 
-         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+    overwrite(True or False)
+    - set "overwrite = True" if you want to overwrite the collection
 
    - write_collection_paga(paga,overwrite)
    
        save the calculation of paga(calculated result)
 
-         Parameters : paga(Dict[str, list]) - paga calculation
+    Parameters : 
+    
+    paga(Dict[str, list]) - paga calculation
 
-         overwrite(True or False) - set "overwrite = True" if you want to overwrite the collection
+    overwrite(True or False)
+    - set "overwrite = True" if you want to overwrite the collection
 	       
    - read_collection_X_obs_by_var(obs_id)
 
-         Parameters : obs_id(int) - the row you needed
+    Parameters : 
+    
+    obs_id(int) - the row you needed
 
-         Returns: obs_value
+    Returns: obs_value
 
-         Return type: list
+    Return type: list
 
    - read_collection_X_var_by_obs(var_id)
 
-         Parameters : var_id(int) - the row you needed
+    Parameters : 
+    
+    var_id(int) - the row you needed
 
-         Returns: var_value
+    Returns: var_value
 
-         Return type: list
+    Return type: list
 
    - read_collection_var(key)
 
-         Parameters : key(str) - gene key("geneSymbol","ensemblID")
+    Parameters : 
+    
+    key(str) - gene key("geneSymbol","ensemblID")
 
-         Returns: gene_value
+    Returns: gene_value
 
-         Return type: list
+    Return type: list
 
    - read_collection_obs(key)
 
-         Parameters : key(str) - cell annotation key("cellID","clusterID","clusterName",...)
+    Parameters : 
+    
+    key(str) - cell annotation key("cellID","clusterID","clusterName",...)
 
-         Returns: cell_annotation_value
+    Returns: cell_annotation_value
 
-         Return type: list
+    Return type: list
 
    - read_collection_uns_metadata()
 
-         Returns: metadata
+    Returns: metadata
 
-         Return type: dictionary
+    Return type: dictionary
 
    - read_collection_gene_set_analysis(method,cell_type)
 
