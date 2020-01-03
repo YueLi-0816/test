@@ -316,8 +316,15 @@ If your Linux system is disconnected , you need restart supervisor service when 
 
 
 ### Step 4 - Restore data into MongoDB
-#### restore.py
-The data will look like 
+
+Now that we have configured the client-side, server-side and have had the database running in the background. The only thing left is to restore pre-formatted data into the database and thereby have data in the client-side.
+
+Let's walk through the following simple process:
+
+#### restore data into mongodb
+A data package delivered by Analytical Biosciences will have the following structure.
+on the top level will be a `restore.py`, python script for restoring data. The data are all pre-processed into database-compatible formats (MongoDB-BSON, technically) to smooth the data-loading process.
+
 ```bash
 data
 ├── restore.py
@@ -329,24 +336,21 @@ data
     └── ...
 ```
 
-Use the code restore.py to restore data into MongoDB.
+Use the code restore.py to restore data into MongoDB, no additional python package is required except the built-in modules.
 ```
 python3 restore.py <absolute_path_to_mongorestore>
 ```
-A restore.log file will be generated in the sibling directory and you can learn that if any dataset goes wrong.
-You can choose to delete the data file or not after you have restored the dataset into MongoDB.
+A restore.log file will be generated in the sibling directory and you can learn if any dataset goes wrong.
+To remove test or mistakenly-loaded data in the database, you can use the `db.dropDatabase()` command from `mongo shell`: <https://docs.mongodb.com/manual/reference/method/db.dropDatabase/>
 
-#### summary.py
-The summary.py is used to calculate the summary information of the whole datasets in the MongoDB, including cell number, cell type number, dataset number and artical number.The corresponding numbers will be placed on the front page of the website.
+#### updating database summary
+The `server_side/summary.py` script is used to calculate the summary information of the whole datasets in the MongoDB, including cell number, cell type number, dataset number and artical number.The corresponding numbers will be placed on the front page of the website.
 ```
 python3 summary.py
 ```
-Because the corresponding numbers will change as the datasets change, you are recommended to run it regularly for example using crontab.
+Because the corresponding numbers will change as the datasets change, you are recommended to run it after each update.
 
-
-*<wenjie Please edit within this range>* <br>
-
-
+#### explore your data
 After restoring data into MongoDB, we would be able to access the datasets from the browser via <http://server_ip/omnibrowser/client_side>, as illustrated in **3.1 deployment of client-side step-1** 
 
 <br><br><br>
@@ -360,13 +364,8 @@ After restoring data into MongoDB, we would be able to access the datasets from 
 # 4 Database API walk-through
 
 ## 4.1 database architecture
-There are three basic levels,including database,collection and document.
-
-Database: In simple words, it can be called the physical container for data. Each of the databases has its own set of files on the file system with multiple databases existing on a single MongoDB server.
-
-Collection: A group of database documents can be called a collection. The RDBMS equivalent to a collection is a table. The entire collection exists within a single database. There are no schemas when it comes to collections. Inside the collection, various documents can have varied fields, but mostly the documents within a collection are meant for the same purpose or for serving the same end goal.
-
-Document: A set of key–value pairs can be designated as a document. Documents are associated with dynamic schemas. The benefit of having dynamic schemas is that a document in a single collection does not have to possess the same structure or fields. Also, the common fields in a collection’s document can have varied types of data.
+As introduced in chapter `1.3 The database`, for each dataset we store it as a `database` and for each piece of information we store it as a `collection` (i.e. matrix, cell annotations, gene annotations are stored as independent collections). 
+Below is the clarified schema and you are encouraged to explore it via `mongo shell`
 
 ```bash
 ├──No_1_1/database
@@ -385,10 +384,35 @@ Document: A set of key–value pairs can be designated as a document. Documents 
   ├── scibet
   └── paga
 ```
-## 4.2 introduction of the API
-The PyMongo distribution contains tools for interacting with MongoDB database from Python.We build an API with the help of PyMongo to write data into the MongoDB and get data from the MongoDB.The input and output data both have the fixed format.All of the collections are independent of each other.So you can just pass the function if you do not have the existing data or the calculation results.
 
-## 4.3 central class
+## 4.2 introduction of the API
+
+to handle the I/O of the above-mentioned schema, we wrote a customized Python API, wrapped around Pymongo, an official release of MongoDB API. The idea behind our API is to have a central class binding I/O methods, with each method corresponding to the writing or reading of a single collection. <br>
+The input of the API are standard Python data structures (i.e. dict(), numpy.ndarray(), etc) while the output will be database files able to be displayed at the client side. Since each collection works independently, you may simply pass some if not interested.
+
+To use the API we simply:
+
+1. read on-disk data into Python memory
+e.g.
+```Python
+# from tsv
+import pandas as pd
+obs_by_var_matrix = pd.read_tsv('obs_by_var_matrix.tsv').to_numpy()
+
+# from mtx
+from scipy.sparse import mmread
+obs_by_var_matrix = mmread('obs_by_var_matrix.mtx')
+```
+
+2. write data into MongoDB
+```Python
+# run the API definition codes first
+
+my_writer = DatabaseAPI('No_1_1')
+write_collection_X_obs_by_var(obs_by_var_matrix,overwrite=True)
+```
+
+## 4.3 introduction to the central class
 
 class  database_API.DatabaseAPI(target_db)
 
