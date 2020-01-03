@@ -334,7 +334,7 @@ Use the code restore.py to restore data into MongoDB.
 python3 restore.py <absolute_path_to_mongorestore>
 ```
 A restore.log file will be generated in the sibling directory and you can learn that if any dataset goes wrong.
-You can choose to delete the data file or not after you have restore the dataset into MongoDB.
+You can choose to delete the data file or not after you have restored the dataset into MongoDB.
 
 #### summary.py
 The summary.py is used to calculate the summary information of the whole datasets in the MongoDB, including cell number, cell type number, dataset number and artical number.The corresponding numbers will be placed on the front page of the website.
